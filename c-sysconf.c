@@ -1,3 +1,6 @@
+/* comment
+ * some attr depends on the OS
+ */
 #include <stdio.h>
 #include <unistd.h>
 
@@ -11,13 +14,13 @@ int main (void)
 	long free_pages;
 	long long mem;
 	long long free_mem;
-	num_procs = sysconf (_SC_NPROCESSORS_CONF);
+	num_procs = sysconf(_SC_NPROCESSORS_CONF);
 	printf ("CPU 个数为: %ld 个\n", num_procs);
-	page_size = sysconf (_SC_PAGESIZE);
+	page_size = sysconf(_SC_PAGESIZE);
 	printf ("系统页面的大小为: %ld K\n", page_size / 1024 );
-	num_pages = sysconf (_SC_PHYS_PAGES);
+	//num_pages = sysconf(_SC_PHYS_PAGES);
 	printf ("系统中物理页数个数: %ld 个\n", num_pages);
-	free_pages = sysconf (_SC_AVPHYS_PAGES);
+	//free_pages = sysconf(_SC_AVPHYS_PAGES);
 	printf ("系统中可用的页面个数为: %ld 个\n", free_pages);
 	mem = (long long) ((long long)num_pages * (long long)page_size);
 	mem /= ONE_MB;
