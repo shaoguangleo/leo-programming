@@ -1,0 +1,3 @@
+flex_wc:	flex_cal.l
+	flex $<
+	cc -o $@ lex.yy.c -L/opt/local/lib -lfl
