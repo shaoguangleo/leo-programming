@@ -1,0 +1,2 @@
+lex start_stop.l
+gcc lex.yy -ll
